@@ -1,3 +1,5 @@
+<!-- Aqui temos a página de Consulta, aqui novamente os dados deverão passar por motedo POST para a página usuario -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,15 +57,23 @@
           <h1 class="mb-5"id="a">Pesquise dados de usuários</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+
+          <!-- Aqui é para onde os dados devem ser enviados -->
           <form action="usuario.php" method="post">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
+
+                <!--aqui será a busca, novamente passando os dados por (name="") -->
                 <input type="text" name="NOME" class="form-control form-control-lg" placeholder="Digite o completo do usuário...">
               </div>
               <div class="col-12 col-md-3">
+
+                <!-- Aqui temos um botão para enviar os dados -->
                 <input class="btn btn-block btn-lg btn-primary" type="submit" value="Procurar">
               </div>
               <br /><br /><br />
+
+              <!-- Aqui temos um botão para voltar para a tela inicial. -->
               <a id="aa" href="inic.html"><b> Voltar para a tela inicial</b> </a>
             </div>
           </form>

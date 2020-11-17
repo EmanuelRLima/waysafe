@@ -1,19 +1,21 @@
 <?php
 
+//Aqui temos a conexão com o banco de dados
     include "conexao.php";
-
+//Aqui a variavel recebe o atributo nome e faz a checagem no banco de dados.
           $NOME = $_POST['NOME'];
           $sql = mysqli_query($conex, "SELECT NOME, MATRICULA, EMAIL, TELEFONE, DATAN, CPF, VEICULO, MARCA, COR, DATA_HORA_MOD FROM card WHERE NOME='$NOME'");
           $exibe = mysqli_fetch_assoc($sql);
           $resut = mysqli_num_rows($sql);
-
+//Se não encontrar, ele retorna nada.
+//Caso ele encotre ele leva para a página HTML.
       if($resut > 0){
 
       }else{ echo "Não achamos nada por aqui";}
 
 ?>
 
-
+<!--Aqui é o começo da página HTML -->
 <html lang="pt-br">
 
   <head>
@@ -59,7 +61,10 @@
 
         <section class="resume-section" id="about">
           <div class="resume-section-content">
-            <p id="p">
+
+            <!-- Nessa local é onde é recebido os dados da da página de consulta.  -->
+
+                    <p id="p">
                     Matricula: <?=$exibe['MATRICULA']?> <br />
                     E-mail: <?=$exibe['EMAIL']?> <br />
                     Telefone: <?=$exibe['TELEFONE']?> <br />
@@ -71,6 +76,8 @@
                     Hora de ultimo registro: <?=$exibe['DATA_HORA_MOD']?> <br />
 
               </p>
+
+              <!-- Aqui volta para a tela de consulta-->
               <a id="aa" href="Consulta.html"><b> Voltar para a tela de consulta</b> </a>
             </div>
           </section>

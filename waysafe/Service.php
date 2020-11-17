@@ -1,9 +1,11 @@
 <?php
+//Aqui os atributos da página register são recebidos para serem incluidos no banco de dados.
 
+//Esse include vem da página "conexao" e serve para se conectar ao Banco de Dados.
   include "conexao.php";
 
 
-
+//Aqui são os atributos que vem da página register que vem pelo meotodo POST e se encontram em (name="").
   $NOME = $_POST['NOME'];
   $MATRICULA = $_POST['MATRICULA'];
   $EMAIL = $_POST['EMAIL'];
@@ -16,13 +18,14 @@
   $COR = $_POST['COR'];
   $ID_CARD = $_POST['ID_CARD'];
 
-
+//Aqui todos esses dados são inseridos no banco de dados pelo "insert into".
 
   $sql = mysqli_query($conex, "INSERT INTO card (ID_CARD, NOME, MATRICULA, EMAIL, TELEFONE, DATAN, CPF, VEICULO, MARCA, COR, REGISTRO) VALUES ('$ID_CARD', '$NOME','$MATRICULA','$EMAIL','$TELEFONE','$DATAN','$CPF','$VEICULO','$MARCA','$COR','$REGISTRO')");
 
 
 ?>
 
+<!-- aparti de aqui começa o código da página -->
 <html lang="pt-br">
 
 <head>
@@ -61,7 +64,7 @@ a{
 <div class="container1">
     <h1>Cadastro Realizado
   </h1>
-
+<!-- Aqui existe a opção de retorna para a página de registro-->
   <a href="register.html"> Voltar  </a>
 </div>
 </div>

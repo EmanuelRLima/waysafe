@@ -10,14 +10,20 @@ include "conexao.php";
   $exibe = mysqli_fetch_assoc($sql); //Aqui são querys de associação.
   $resut = mysqli_num_rows($sql); //Aqui são querys de associação.
 
+  $mensagem= "Alerta!, sua TAG acaba de ser utilizada, dirija-se a portaria caso haja algo errado."; //Menssagem passada para o E-mail do usuário.
+  $subject = "WaySafe!"; //Assunto do E-mail.
+  $headers = 'From: waysafe.brasil@gmail.com' . "\r\n" . //referentes do E-mail.
+              'Reply-To: waysafe.brasil@gmail.com' . "\r\n" .
+              'X-Mailer: PHP/' . phpversion();
+  mail($exibe['EMAIL'], $subject, $mensagem, $headers); //query que envia o E-mail.
 
-if($resut > 0){
+if($resut > 0){ //se o resultado existir, o conteudo é exibido.
 
 ?>
 <!--  Tudo a baixo é para exibir o que existe no banco de dados caso exista -->
 <p> Bem vindo: <?=$exibe['NOME']?> <br />
   Matricula: <?=$exibe['MATRICULA']?> <br />
-  E-mail: <?=$exibe['EMAIL']?> <br />
+  E-mail: <?=$exibe ['EMAIL']?> <br />
   Telefone: <?=$exibe['TELEFONE']?> <br />
   Data de Nascimento: <?=$exibe['DATAN']?> <br />
   CPF: <?=$exibe['CPF']?> <br />
@@ -28,7 +34,11 @@ if($resut > 0){
 
  </p>
 
+
+
 <?php
+
+
 //caso não exista é finalizado no else.
 }else{
 

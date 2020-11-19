@@ -10,9 +10,10 @@ include "conexao.php";
   $exibe = mysqli_fetch_assoc($sql); //Aqui são querys de associação.
   $resut = mysqli_num_rows($sql); //Aqui são querys de associação.
 
-  $mensagem= "Alerta!, sua TAG acaba de ser utilizada, dirija-se a portaria caso haja algo errado."; //Menssagem passada para o E-mail do usuário.
+  $mensagem= "Alerta!, sua TAG acaba de ser utilizada.<br/> Não reconheça essa ação? dirija-se a portaria. <br/> Caso contrário, desconsidere essa mensagem. <br /><br /> Equipe WaySafe!" ; //Menssagem passada para o E-mail do usuário.
   $subject = "WaySafe!"; //Assunto do E-mail.
-  $headers = 'From: waysafe.brasil@gmail.com' . "\r\n" . //referentes do E-mail.
+  $headers =  "Content-Type:text/html; charset=UTF-8\n";
+              'From: waysafe.brasil@gmail.com' . "\r\n" . //referentes do E-mail.
               'Reply-To: waysafe.brasil@gmail.com' . "\r\n" .
               'X-Mailer: PHP/' . phpversion();
   mail($exibe['EMAIL'], $subject, $mensagem, $headers); //query que envia o E-mail.

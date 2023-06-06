@@ -1,4 +1,4 @@
-# Bem vindo ao WAySafe!
+# Bem vindo ao WaySafe!
 
 Esse projeto tem o intuito de promover segurança e controle a estacionamentos por meio de tag's e leitores RFID.
 

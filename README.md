@@ -1,6 +1,6 @@
 # Bem vindo ao WAySafe!
 
-Esse projeto tinha o intuito de promover segurança e controle a estacionamentos por meio de tag's e leitores RFID.
+Esse projeto tem o intuito de promover segurança e controle a estacionamentos por meio de tag's e leitores RFID.
 
 O projeto inicialmente tinha o nome de CicloSafe, pois era direcionado ao bicicletário, evoluindo futuramente para todo o estacionamento.
 #
